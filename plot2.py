@@ -70,3 +70,4 @@ plt.ylabel('Expenses')
 plt.grid(b=True, which='both', color='0.65', linestyle='-')
 
 plt.show()
+plt.savefig('plot.png')
