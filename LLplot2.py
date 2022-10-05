@@ -15,7 +15,7 @@ rcParams['figure.figsize'] = 20,10
 plt.close('all')
 
 # read the data
-with open('LL.csv','r') as f:
+with open('TvM.csv','r') as f:
     reader=csv.reader(f,delimiter=',')
     next(reader, None)
     data=np.array([tuple(row[0:]+row[:1]) for row in reader],dtype=None)
@@ -78,10 +78,10 @@ p1 = popt[0]
 p2 = popt[1]
 
 # plot curve
-curvex=np.linspace(5,1500,1000)
+curvex=np.linspace(.5,7)
 curvey=exponential(curvex,p1,p2)
-plt.plot(curvex,curvey,'r', linewidth=5)
-plt.text(5,8,'y =%0.2f log x + %0.2f' %(p1, p2),fontsize=36)
+plt.plot(curvex,curvey,'r', linewidth=2)
+plt.text(.8,8,'y =%0.2f * x ^ %0.2f' %(p1, p2),fontsize=36)
 
 # plot data
 plt.plot(data[:,1],data[:,2],'o',label = 'Xsaved', markersize=12)
